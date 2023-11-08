@@ -1,10 +1,16 @@
-import { useState, useEffect } from "react";
-import Nav from "./components/Nav";
-import { SelectedPage } from "./components/types";
+import Home from "@/components/home";
+import OurClasses from "@/components/ourClasses";
+import Benefits from "@/components/benefits";
+import ContactUs from "@/components/contactUs";
+import Footer from "@/components/footer";
+import { useEffect, useState } from "react";
+import { SelectedPage } from "@/components/types";
+import Navbar from "./components/Nav";
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
-
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
+    SelectedPage.Home
+  );
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
   useEffect(() => {
@@ -18,12 +24,20 @@ function App() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
-    <>
-      <div className="app">
-        <Nav selectedPage={selectedPage} setSelectedPage={setSelectedPage} isTopOfPage={isTopOfPage}/>
-      </div>
-    </>
+    <div className="app bg-gray-20">
+      <Navbar
+        isTopOfPage={isTopOfPage}
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
+      <Home setSelectedPage={setSelectedPage} />
+      <Benefits setSelectedPage={setSelectedPage} />
+      <OurClasses setSelectedPage={setSelectedPage} />
+      <ContactUs setSelectedPage={setSelectedPage} />
+      <Footer />
+    </div>
   );
 }
 
