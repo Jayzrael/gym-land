@@ -68,10 +68,7 @@ const OurClasses = ({ setSelectedPage }: Props) => {
           <div className="md:w-3/5">
             <HText>OUR CLASSES</HText>
             <p className="py-5">
-              Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
-              tellus quam porttitor. Mauris velit euismod elementum arcu neque
-              facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit
-              enim mattis odio in risus nunc.
+            "Experience unmatched fitness at our gym: personalized training, top-notch equipment, vibrant atmosphere, expert guidance, and a supportive community for a healthier, fitter, and more energized you."
             </p>
           </div>
         </motion.div>
